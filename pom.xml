@@ -83,7 +83,7 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/net.sf.barcode4j/barcode4j -->
+		
 <dependency>
     <groupId>net.sf.barcode4j</groupId>
     <artifactId>barcode4j</artifactId>
@@ -93,13 +93,18 @@
 <dependency>
     <groupId>com.google.zxing</groupId>
     <artifactId>core</artifactId>
-    <version>3.3.3</version> <!-- Asegúrate de que esta sea la versión correcta -->
+    <version>3.3.3</version> 
 </dependency>
 
 <dependency>
     <groupId>com.google.zxing</groupId>
     <artifactId>javase</artifactId>
-    <version>3.3.3</version> <!-- Asegúrate de que esta sea la versión correcta -->
+    <version>3.3.3</version> 
+</dependency>
+<dependency>
+    <groupId>org.apache.xmlgraphics</groupId>
+    <artifactId>batik-all</artifactId>
+    <version>1.16</version> 
 </dependency>
 
 	</dependencies>
