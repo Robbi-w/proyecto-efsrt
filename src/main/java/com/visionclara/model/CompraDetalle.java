@@ -14,12 +14,12 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tb_detalle_compra")
+@Table(name = "tb_detalle_venta")
 public class CompraDetalle {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "cod_det_compra") private Integer codDetCom;
+	@Column(name = "cod_det_venta") private Integer codDetCom;
 	
 	@Column(name = "precio") private BigDecimal precio;
 	
@@ -29,7 +29,7 @@ public class CompraDetalle {
 	@JoinColumn(name = "cod_prod") private Producto CDetalleProducto;
 	
 	@ManyToOne
-	@JoinColumn(name ="cod_compra") private Compra CDetalleCompra;
+	@JoinColumn(name ="cod_venta") private Compra CDetalleCompra;
 	
 	public Compra getCDetalleCompra() {
 		return CDetalleCompra;

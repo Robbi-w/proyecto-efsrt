@@ -121,7 +121,7 @@ public class AdministradorController {
 		response.setContentType("application/pdf");
 		try {
 			//Carga del Jasper
-			String ru = resourceLoader.getResource("classpath:reportes/ReporteEmpleado.jasper").getURI().getPath();
+			String ru = resourceLoader.getResource("classpath:reportes/ReporteAdministrador.jasper").getURI().getPath();
 			//combinar el .jasper con la conexion
 			JasperPrint jasperPrint = JasperFillManager.fillReport(ru, null, dataSource.getConnection());
 			//genera el PDF

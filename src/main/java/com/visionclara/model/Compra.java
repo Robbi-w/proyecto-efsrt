@@ -21,17 +21,17 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tb_compra")
+@Table(name = "tb_venta")
 public class Compra {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "cod_compra") private Integer codCom;
+	@Column(name = "cod_venta") private Integer codCom;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name="fec_compra") private Date fecCom;
+	@Column(name="fec_venta") private Date fecCom;
 	
-	@Column(name = "monto_compra") private BigDecimal montoCom;	
+	@Column(name = "monto_venta") private BigDecimal montoCom;	
 	
 	@Column(name = "mpago")private String mpago;
 	

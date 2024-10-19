@@ -133,7 +133,7 @@ public class UsuarioController {
 			response.setContentType("application/pdf");
 			try {
 				//Carga del Jasper
-				String ru = resourceLoader.getResource("classpath:reportes/ReporteCliente.jasper").getURI().getPath();
+				String ru = resourceLoader.getResource("classpath:reportes/ReporteUsuario.jasper").getURI().getPath();
 				//combinar el .jasper con la conexion
 				JasperPrint jasperPrint = JasperFillManager.fillReport(ru, null, dataSource.getConnection());
 				//genera el PDF
