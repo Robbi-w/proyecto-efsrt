@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Mantenimiento Proveedores</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/resources/img/RoyalPawsLogo-nobg.png" type="image/x-icon">
+
+	<!-- Cargar CSS -->
+	<link rel="stylesheet" href="/resources/css/index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/resources/css/datatables.css" type="text/css">
+
+	<!-- Alert Messages CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+</head>
+
+<body class="my-body">
+
+	<!-- Llamado Header -->
+	<div th:replace="~{/fragments/header :: myheader}"></div>
+
+	<br>
+	<br>
+
+	<div id="tablapeque" class="container d-flex align-items-center pt-5 text-light">
+		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+			class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+			<path
+				d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z" />
+		</svg>
+		<h3 class="m-0 ps-1">Mantenimiento Proveedores</h3>
+	</div>
+
+	<div id="tablapeque" class="container">
+		<hr>
+		<div class="d-flex align-items-center justify-content-between">
+			<!-- Inicio Modal Registrar -->
+			<a class="btn btn-sm btn-success px-3" data-bs-toggle="modal" data-bs-target="#exampleModalGrabar">
+				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+					class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+					<path
+						d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+				</svg> Agregar Nuevo
+			</a>
+			<!-- Reporte -->
+			<div class="btn-group">
+				<a id="botonreporte" href="/proveedor/reportes" target="_blank" class="btn btn-primary px-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+						class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
+						<path
+							d="M5.523 12.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548m2.455-1.647c-.119.025-.237.05-.356.078a21.148 21.148 0 0 0 .5-1.05 12.045 12.045 0 0 0 .51.858c-.217.032-.436.07-.654.114m2.525.939a3.881 3.881 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256M8.278 6.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z" />
+						<path fill-rule="evenodd"
+							d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.651 11.651 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.856.856 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.844.844 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.76 5.76 0 0 0-1.335-.05 10.954 10.954 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.238 1.238 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a19.697 19.697 0 0 1-1.062 2.227 7.662 7.662 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103z" />
+					</svg>Generar Reporte
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="tablapeque" class="container my-3">
+		<!-- Tabla -->
+		<table id="datatable-spanish"
+			class="table table-striped border-dark table-bordered border-bottom-0 shadow pt-2">
+			<thead class="table-primary">
+				<tr>
+					<th>Código</th>
+					<th>Nombre</th>
+					<th class="text-center">Opciones</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="row:${listaProveedor}">
+					<td th:text="${row.codProv}"></td>
+					<td th:text="${row.nomProv}"></td>
+					<td class="d-flex align-items-center justify-content-center">
+						<!-- Boton Actualizar -->
+						<a class="btn btn-sm btn-primary border-0 btn-editar" data-bs-toggle="modal"
+							data-bs-target="#exampleModalGrabar">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-upload" viewBox="0 0 16 16">
+								<path
+									d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+								<path
+									d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+							</svg>
+						</a>
+						<!-- Boton Eliminar -->
+						<a class="btn btn-sm btn-danger border-0 mx-2 btn-eliminar">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-trash3-fill" viewBox="0 0 16 16">
+								<path
+									d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+							</svg>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- Modal Registrar -->
+	<div class="modal fade" id="exampleModalGrabar" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header bg-dark">
+					<div class="d-flex align-items-center">
+						<!-- Titulo -->
+						<a><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
+								class="bi bi-gear-fill text-warning" viewBox="0 0 16 16">
+								<path
+									d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+							</svg></a>
+						<h4 class="modal-title ms-2 text-warning">Proveedor</h4>
+					</div>
+					<button type="button" class="btn btn-close bg-warning" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+
+				<!-- Body -->
+				<div class="modal-body">
+					<div class="container">
+						<div class="row justify-content-center">
+							<!-- Formulario -->
+							<form id="CreateForm" th:action="@{/proveedor/grabar}" method="post" class="my-3 row">
+
+								<div class="mb-3 col-md-4">
+									<label class="col-form-label">Código</label>
+									<div>
+										<input type="text" class="form-control" name="txtCodigo" value="0"
+											id="txtCodigo" readonly> <!-- no-disabled -->
+									</div>
+								</div>
+
+								<div class="mb-3 col-md-8">
+									<label class="col-form-label">Nombre <span class="text-danger"
+											title="Campo Obligatorio">*</span></label>
+									<div>
+										<input type="text" class="form-control border-secondary" name="txtNombre"
+											id="txtNombre" required>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- Boton Registar/Actualizar -->
+				<div class="modal-footer d-flex align-items-center justify-content-center bg-dark">
+					<button id="botonguardar" class="btn btn-outline-warning fw-bold px-5" type="submit"
+						form="CreateForm">
+						Guardar Cambios
+					</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Fin Modal Registrar  -->
+
+	<br>
+	<br>
+	<br>
+
+	<!-- Llamado Footer -->
+	<div th:replace="~{/fragments/footer :: myfooter}"></div>
+
+	<!-- Inicio Cargar JS -->
+	<script src="/resources/js/jquery-3.6.0.js"></script>
+	<script src="/resources/js/plugins.js"></script>
+	<script src="/resources/js/back-top.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+	<script src="/resources/js/datatables.js"></script>
+	<script src="/resources/js/datatables-language.js"></script>
+
+	<!-- Alert Messages JS -->
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+	<!-- Mostar alertas -->
+	<script th:inline="javascript" th:if="${mensaje != null}">
+		let msj;
+		msj = /*[[${mensaje}]]*/
+
+			toastr.success(msj, "Mensaje: ", {
+				"timeOut": "7000",
+				"extendedTImeout": "7000",
+				"positionClass ": " toast-top-right ",
+			});
+	</script>
+
+	<!-- Function actualizar -->
+	<script>
+		$(document).on("click", ".btn-editar", function () {
+			let cod;
+			// Leer columna en la que se dio click
+			cod = $(this).parents("tr").find("td")[0].innerHTML;
+			$.get("buscar?buscarCodigo=" + cod, function (response) {
+				$("#txtCodigo").val(response.codProv);
+				$("#txtNombre").val(response.nomProv);
+			})
+		})
+	</script>
+
+	<!-- Function eliminar -->
+	<script>
+		$(document).on("click", ".btn-eliminar", function () {
+			let cod;
+			// Leer columna en la que se dio click
+			cod = $(this).parents("tr").find("td")[0].innerHTML;
+			alertify.confirm('Alerta!', '¿ESTA SEGURO DE ELIMINAR ESTE REGISTRO?', function () {
+				window.location = "eliminar?buscarCodigo=" + cod;
+			}, function () {
+				alertify.error('Acción Cancelada');
+			}).set('labels', {ok: 'Sí', cancel: 'Cancelar'});
+		})
+	</script>
+
+</body>
+
+</html>

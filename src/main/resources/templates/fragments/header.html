@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<body>
+
+	<!-- Capturar Fragmento Header -->
+	<div th:fragment="myheader">
+
+		<!-- Icono de Menu Vertical -->
+		<div id="preloader">
+			<div id="loader"></div>
+		</div>
+		<!-- Menu -->
+		<navbar id="Navbar">
+			<!-- Logo y Nombre -->
+			<div class="img-title">
+				<img src="/resources/img/RoyalPawsLogo-nobg.png" id="img-logo" title="Inicio" alt="royalpaws">
+				<a th:href="@{/index}">Royal Paws</ape>
+			</div>
+
+			<!-- Menu items -->
+			<ul>
+				<li><a th:href="@{/index}">Inicio</a></li>
+				<div id="categories">
+					<li><a class="smoothscroll dropdown-toggle" role="button" id="dropdownMenuLink"
+							data-bs-toggle="dropdown" aria-expanded="false" style="pointer-events: none;">
+							Categorias</a></li>
+					<div id="drop-down-box" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						<a class="dropdown-item" href="#_">Alimento Seco</a>
+						<a class="dropdown-item" href="#_">Juguetes</a>
+						<a class="dropdown-item" href="#_">Arena</a>
+						<a class="dropdown-item" href="#_">Antipulgas</a>
+						<a class="dropdown-item" href="#_">Suplementos</a>
+					</div>
+				</div>
+				<li><a th:href="@{/nosotros}">Nosotros</a></li>
+				<li><a th:href="@{/tiendas}">Tiendas</a></li>
+				<li><a th:href="@{/index#maspromos}">Ofertas</a></li>
+			</ul>
+
+			<div id="other-opt">
+				<div class="ctn-btn-ipt d-flex align-items-center">
+					<!-- Boton Busqueda -->
+					<input name="search" type="search" class="form-control rounded" placeholder="Buscar..."
+						aria-label="Search" aria-describedby="search-addon" />
+					<button class="input-group-text text-white border-0" id="search-addon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+							class="bi bi-search" viewBox="0 0 16 16">
+							<path
+								d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+						</svg>
+					</button>
+				</div>
+
+				<!-- Titule perfil -->
+				<a class="text-decoration-none text-light titule-perfil">Hola : <span th:text="${username}"></span></a>
+				<div class="dropdown">
+					<!-- Boton Perfil -->
+					<a class="perfil-login text-decoration-none text-light titule-perfil" data-bs-toggle="dropdown"
+						aria-expanded="false" title="Perfil">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+							class="bi bi-person" viewBox="0 0 16 16">
+							<path
+								d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+						</svg>
+						Perfil
+					</a>
+					<div id="drop-down-box" class="dropdown-menu">
+						<!-- Boton de Modal Perfil -->
+						<a href="#" class="dropdown-item" data-bs-toggle="modal"
+							data-bs-target="#exampleModalPerfil">Ver Perfil</a>
+					</div>
+				</div>
+
+			</div>
+			<!-- Inicio de Menu -->
+			<div>
+				<a th:href="@{/menu}" class="btn btn-secondary" type="button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+						class="bi bi-grid" viewBox="0 0 16 16">
+						<path
+							d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z" />
+					</svg>
+				</a>
+			</div>
+			<!-- Fin de Menu -->
+		</navbar>
+		<!-- Menu Horizontal Fin -->
+
+		<!-- Inicio Cerrar Sesion Modal -->
+		<div class="modal fade" id="exampleModalLogout" tabindex="-1" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 class="modal-title fs-5" id="exampleModalLabel">¿Estas seguro que deseas cerrar sesión? 🤨
+						</h2>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p>Seleccione "Si,cerrar sesión" a continuación para finalizar tu sesion actual.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+						<a th:href="@{/logout}" class="btn btn-outline-danger">Si,cerrar sesión</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Fin Cerrar Sesion Modal -->
+
+		<!-- Inicio Modal Perfil -->
+		<div class="modal fade" id="exampleModalPerfil" tabindex="-1" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content overflow-hidden">
+
+					<!-- Header Perfil -->
+					<div class="modal-header">
+						<div class="d-flex align-items-center">
+							<a><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+									class="bi bi-person-vcard" viewBox="0 0 16 16">
+									<path
+										d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z" />
+									<path
+										d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z" />
+								</svg>
+							</a>
+							<h1 class="modal-title fs-5 text-dark ms-2" id="exampleModalLabel">Perfil:</h1>
+						</div>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<!-- bg Perfil-->
+					<div class="col-sm-6 d-none d-lg-block">
+						<img class="img-fluid position-absolute z-0" src="/resources/img/bg-perfil.jpg" alt="bg-perfil"
+							style="height: 470px;">
+					</div>
+
+					<!-- Perfil Body-->
+					<div class="modal-body">
+						<div class="container py-2">
+							<div class="row">
+								<!-- Card -->
+								<div class="col-lg-12">
+									<div class="card mb-4 px-5">
+										<div class="card-body text-center">
+											<img src="/resources/img/profile.png" alt="perfil"
+												class="img-fluid rounded-circle border border-dark"
+												style="width: 200px;">
+											<h5 class="my-2 text-dark fw-bold" th:text="${username}"></h5>
+											<p class="text-muted mb-3">Administrador</p>
+											<div><a href="#_" class="smoothscroll btn btn-sm btn-dark"
+													data-bs-toggle="modal" data-bs-target="#exampleModalLogout">Cerrar
+													Sesión</a>
+											</div>
+											<p class="text-muted mb-2"></p>
+											<div class="d-flex justify-content-center mb-2">
+												<a href="#_" data-bs-dismiss="modal"
+													class="btn btn-sm btn-dark col-sm-12">Volver</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Fin Modal Perfil -->
+
+	</div>
+	<!-- Capturar Fragmento Header  -->
+</body>
+
+</html>
