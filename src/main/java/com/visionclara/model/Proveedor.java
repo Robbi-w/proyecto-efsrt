@@ -30,4 +30,34 @@ public class Proveedor {
 	@OneToMany(mappedBy = "productoProveedor")
 	private List<Producto> listaProductos;
 
+
+	public Integer getCodProv() {
+		return codProv;
+	}
+
+
+	public void setCodProv(Integer codProv) {
+		this.codProv = codProv;
+	}
+
+
+	public String getNomProv() {
+		return nomProv;
+	}
+
+
+	public void setNomProv(String nomProv) {
+		this.nomProv = nomProv;
+	}
+
+
+	public List<Producto> getListaProductos() {
+		return listaProductos;
+	}
+
+
+	public void setListaProductos(List<Producto> listaProductos) {
+		this.listaProductos = listaProductos;
+	}
+	
 }

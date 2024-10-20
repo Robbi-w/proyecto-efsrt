@@ -91,5 +91,89 @@ public class Administrador {
 		this.clave = clave;
 		AdministradorRol = administradorRol;
 	}
+
+	public Integer getCodAdm() {
+		return codAdm;
+	}
+
+	public void setCodAdm(Integer codAdm) {
+		this.codAdm = codAdm;
+	}
+
+	public String getNomAdm() {
+		return nomAdm;
+	}
+
+	public void setNomAdm(String nomAdm) {
+		this.nomAdm = nomAdm;
+	}
+
+	public String getApeAdm() {
+		return apeAdm;
+	}
+
+	public void setApeAdm(String apeAdm) {
+		this.apeAdm = apeAdm;
+	}
+
+	public int getDniAdm() {
+		return dniAdm;
+	}
+
+	public void setDniAdm(int dniAdm) {
+		this.dniAdm = dniAdm;
+	}
+
+	public String getEmaAdm() {
+		return emaAdm;
+	}
+
+	public void setEmaAdm(String emaAdm) {
+		this.emaAdm = emaAdm;
+	}
+
+	public int getTelAdm() {
+		return telAdm;
+	}
+
+	public void setTelAdm(int telAdm) {
+		this.telAdm = telAdm;
+	}
+
+	public Date getFecNac() {
+		return fecNac;
+	}
+
+	public void setFecNac(Date fecNac) {
+		this.fecNac = fecNac;
+	}
+
+	public String getUserAdm() {
+		return userAdm;
+	}
+
+	public void setUserAdm(String userAdm) {
+		this.userAdm = userAdm;
+	}
+
+	public String getClave() {
+		return clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
+	public Rol getAdministradorRol() {
+		return AdministradorRol;
+	}
+
+	public void setAdministradorRol(Rol administradorRol) {
+		AdministradorRol = administradorRol;
+	}
+
+	public void setListaCompra(List<Compra> listaCompra) {
+		this.listaCompra = listaCompra;
+	}
 	
 }

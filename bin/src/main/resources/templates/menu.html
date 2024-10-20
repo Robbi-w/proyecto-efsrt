@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Menú Principal</title>
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/resources/img/RoyalPawsLogo-nobg.png" type="image/x-icon">
+	
+	<!-- Cargar CSS -->
+    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">  
+     
+	<!-- Iconos -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="my-body">
+	
+		<!-- Llamado Header -->
+	<div th:replace="~{/fragments/header :: myheader}"></div>
+	<br>
+	<br>
+	<!-- Container principal -->
+	<div class="container py-5">
+		<div class="d-flex align-items-center">
+			<i class="fas fa-circle-info fs-3" style="color: #ffffff;"></i>
+			<h3 id="titulomenu" class="m-0 ps-2">Menu Principal</h3>
+		</div>
+		<br>
+		
+		<div class="col-md-12">
+			<div class="row">			
+				<!-- Empleados -->
+				<div class="col-xl-3 col-lg-6">
+					<div id="card1" class="card">
+						<div class="card-statistic-3 p-4">
+
+							<div class="card-icon card-icon-large">
+								<!-- Icono -->
+								<i class="fas fa-briefcase"></i>
+							</div>
+                            <div class="mb-4">
+								<h5 class="card-title fw-bold mb-0 text-center">Empleados</h5>
+							</div>
+							<div class="mb-2 d-flex align-items-center justify-content-center">
+								<!-- Link -->
+								<a th:href="@{/administrador/lista}" class="btn btn-lg btn-light px-4">Acceder <i class="fa fa-arrow-up"></i></a>
+								<!-- Cantidad -->
+								<h2 class="d-flex align-items-center mx-3" th:text="${cantAdministrador}"></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--Clientes-->
+				<div class="col-xl-3 col-lg-6">
+					<div id="card2" class="card">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large">
+								<!-- Icono -->
+								<i class="fas fa-users"></i>
+							</div>
+							<div class="mb-4">
+								<h5 class="card-title fw-bold mb-0 text-center">Clientes</h5>
+							</div>
+							<div class="mb-2 d-flex align-items-center justify-content-center">
+								<!-- Link -->
+								<a th:href="@{/usuario/lista}" class="btn btn-lg btn-light px-4">Acceder <i class="fa fa-arrow-up"></i></a>
+								<!-- Cantidad -->
+								<h2 class="d-flex align-items-center mx-3" th:text="${cantUsuario}"></h2>			
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--Productos-->
+				<div class="col-xl-3 col-lg-6">
+					<div id="card3" class="card">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large">
+								<!-- Icono -->
+								<i class="fas fa-box"></i>
+							</div>
+							<div class="mb-4">
+								<h5 class="card-title fw-bold mb-0 text-center">Productos</h5>
+							</div>
+							<div class="mb-2 d-flex align-items-center justify-content-center">
+								<!-- Link -->
+								<a th:href="@{/producto/lista}" class="btn btn-lg btn-light px-4">Acceder <i class="fa fa-arrow-up"></i></a>
+								<!-- Cantidad -->
+								<h2 class="d-flex align-items-center mx-3" th:text="${cantProducto}"></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Proveedor -->
+				<div class="col-xl-3 col-lg-6">
+					<div id="card4" class="card">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large">
+								<!-- Icono -->
+								<i class="fas fa-truck-field"></i>
+							</div>
+							<div class="mb-4">
+								<h5 class="card-title fw-bold mb-0 text-center">Proveedores</h5>
+							</div>
+							<div class="mb-2 d-flex align-items-center justify-content-center">
+								<!-- Link -->
+								<a th:href="@{/proveedor/lista}" class="btn btn-lg btn-light px-4">Acceder <i class="fa fa-arrow-up"></i></a>
+								<!-- Cantidad -->
+								<h2 class="d-flex align-items-center mx-3" th:text="${cantProveedor}"></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--Marca-->
+				<div class="col-xl-4 col-lg-6">
+					<div id="card5" class="card">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large">
+								<!-- Icono -->
+								<i class="fas fa-tag"></i>
+							</div>
+							<div class="mb-4">
+								<h5 class="card-title fw-bold mb-0 text-center">Marcas</h5>
+							</div>
+							<div class="mb-2 d-flex align-items-center justify-content-center">
+								<!-- Link -->
+								<a th:href="@{/marca/lista}" class="btn btn-lg btn-light px-4">Acceder <i class="fa fa-arrow-up"></i></a>
+								<!-- Cantidad -->
+								<h2 class="d-flex align-items-center mx-3" th:text="${cantMarca}"></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--Compras-->
+				<div class="col-xl-4 col-lg-6">
+					<div id="card6" class="card">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large">
+								<!-- Icono -->
+								<i class="fas fa-cart-shopping"></i>
+							</div>
+							<div class="mb-4">
+								<h5 class="card-title fw-bold mb-0 text-center">Compras</h5>
+							</div>
+							<div class="mb-2 d-flex align-items-center justify-content-center">
+								<!-- Dropdown -->
+								<div class="dropdown">
+								  <button class="btn btn-lg btn-light px-4 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								    Ver opciones
+								  </button>
+								  <ul class="dropdown-menu">
+										 <li><a class="dropdown-item" th:href="@{/compra/lista}">1. Mantenimiento</a></li>			     
+										 <li><a class="dropdown-item" th:href="@{/compra/boleta}">2. Registrar</a></li>
+								   </ul>	  
+								</div>
+								<!-- Cantidad -->
+								<h2 class="d-flex align-items-center mx-3" th:text="${cantCompra}"></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Detalle Compras -->
+				<div class="col-xl-4 col-lg-6">
+					<div id="card7" class="card">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large">
+								<!-- Icono -->
+								<i class="fas fa-receipt"></i>
+							</div>
+							<div class="mb-4">
+								<h5 class="card-title fw-bold mb-0 text-center">Detalle Compras</h5>
+							</div>
+							<div class="mb-2 d-flex align-items-center justify-content-center">
+								<!-- Link -->
+								<a th:href="@{/detalles/lista}" class="btn btn-lg btn-light px-4">Acceder <i class="fa fa-arrow-up"></i></a>
+								<!-- Cantidad -->
+								<h2 class="d-flex align-items-center mx-3" th:text="${cantCDetalle}"></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	
+	<!-- Llamado Footer -->
+	<div th:replace="~{/fragments/footer :: myfooter}"></div>
+
+	<!-- Inicio Cargar JS  -->
+    <script src="/resources/js/jquery-3.6.0.js"></script>
+    <script src="/resources/js/plugins.js"></script>
+    <script src="/resources/js/back-top.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

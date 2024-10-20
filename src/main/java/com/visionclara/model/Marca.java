@@ -31,4 +31,36 @@ public class Marca {
 	@OneToMany(mappedBy = "productoMarca") 
 	private List<Producto> listaProductos;
 
+	public Integer getCodMarca() {
+		return codMarca;
+	}
+
+	public void setCodMarca(Integer codMarca) {
+		this.codMarca = codMarca;
+	}
+
+	public String getNomMarca() {
+		return nomMarca;
+	}
+
+	public void setNomMarca(String nomMarca) {
+		this.nomMarca = nomMarca;
+	}
+
+	public String getPaiMarca() {
+		return paiMarca;
+	}
+
+	public void setPaiMarca(String paiMarca) {
+		this.paiMarca = paiMarca;
+	}
+
+	public List<Producto> getListaProductos() {
+		return listaProductos;
+	}
+
+	public void setListaProductos(List<Producto> listaProductos) {
+		this.listaProductos = listaProductos;
+	}
+	
 }

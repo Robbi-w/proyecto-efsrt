@@ -25,20 +25,125 @@
 
 	<!-- Titulo-->
 	<div class="container py-5">
-		<div id="tituloform" class="text-center ">
-			<h2>Nuestras Tiendas</h2>
-			<p>Actualmente contamos con tiendas en los siguientes distritos</p>
-		</div>
-		<div class="row justify-content-center">
-			<ul class="list-group mt-4">
-				<li class="list-group-item list-group-item-action text-center list-group-item-dark">Tienda Barranco - Pasaje Tumay 196</li>
-				<li class="list-group-item list-group-item-action text-center list-group-item-dark">Tienda 2 - Dirección 2</li>
-				<li class="list-group-item list-group-item-action text-center list-group-item-dark">Tienda 3 - Dirección 3</li>
-				<li class="list-group-item list-group-item-action text-center list-group-item-dark">Tienda 4 - Dirección 4</li>
-				<li class="list-group-item list-group-item-action text-center list-group-item-dark">Tienda 5 - Dirección 5</li>
-			</ul>
-		</div>
+	    <div id="tituloform" class="text-center">
+	        <h2>Nuestras Tiendas</h2>
+	        <p>Actualmente contamos con tiendas en los siguientes distritos</p>
+	    </div>
+	    <div class="row justify-content-center mt-4">
+	        <div class="col-md-4">
+	            <div class="card tienda-card">
+	                <img src="/resources/img/sede1.jpeg" class="card-img-top" alt="Tienda Barranco">
+	                <div class="card-body text-center">
+	                    <h5 class="card-title">Tienda Barranco</h5>
+	                    <p class="card-text">Pasaje Tumay 196</p>
+	                    <div class="overlay">
+	                        <div class="overlay-text">
+	                            <p>Disfruta de una amplia variedad de lentes ópticos y de sol. ¡Visítanos y obtén descuentos exclusivos!</p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-4">
+	            <div class="card tienda-card">
+	                <img src="/resources/img/sede2.jpeg" class="card-img-top" alt="Tienda 2">
+	                <div class="card-body text-center">
+	                    <h5 class="card-title">Tienda 2</h5>
+	                    <p class="card-text">Dirección 2</p>
+	                    <div class="overlay">
+	                        <div class="overlay-text">
+	                            <p>Aquí encontrarás lentes de contacto y productos para su cuidado. ¡Conoce nuestras promociones!</p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-4">
+	            <div class="card tienda-card">
+	                <img src="/resources/img/sede3.jpeg" class="card-img-top" alt="Tienda 3">
+	                <div class="card-body text-center">
+	                    <h5 class="card-title">Tienda 3</h5>
+	                    <p class="card-text">Dirección 3</p>
+	                    <div class="overlay">
+	                        <div class="overlay-text">
+	                            <p>Ofrecemos lentes personalizados para cada estilo de vida. Ven y consulta a nuestros expertos.</p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-4 mt-4">
+	            <div class="card tienda-card">
+	                <img src="/resources/img/sede4.jpeg" class="card-img-top" alt="Tienda 4">
+	                <div class="card-body text-center">
+	                    <h5 class="card-title">Tienda 4</h5>
+	                    <p class="card-text">Dirección 4</p>
+	                    <div class="overlay">
+	                        <div class="overlay-text">
+	                            <p>Visita nuestra sección de moda en lentes. ¡Tendencias que no te puedes perder!</p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-4 mt-4">
+	            <div class="card tienda-card">
+	                <img src="/resources/img/sede5.jpeg" class="card-img-top" alt="Tienda 5">
+	                <div class="card-body text-center">
+	                    <h5 class="card-title">Tienda 5</h5>
+	                    <p class="card-text">Dirección 5</p>
+	                    <div class="overlay">
+	                        <div class="overlay-text">
+	                            <p>Encuentra nuestros servicios de ajuste de lentes y asesoría profesional. ¡Te esperamos!</p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 	</div>
+
+
+	<style>
+	    .tienda-card {
+	        position: relative;
+	        overflow: hidden; 
+	        transition: transform 0.3s ease; 
+	    }
+
+	    .tienda-card:hover {
+	        transform: scale(1.05); 
+	    }
+
+	    .overlay {
+	        position: absolute;
+	        top: 0;
+	        left: 0;
+	        right: 0;
+	        bottom: 0;
+	        background-color: rgba(0, 0, 0, 0.7); 
+	        opacity: 0; 
+	        transition: opacity 0.3s ease; 
+	        display: flex; 
+	        align-items: center;
+	        justify-content: center;
+	    }
+
+	    .tienda-card:hover .overlay {
+	        opacity: 1; 
+	    }
+
+	    .overlay-text {
+	        color: white; 
+	        text-align: center;
+	        padding: 20px; 
+	    }
+		.card-img-top {
+		    width: 100%; 
+		    height: 200px; 
+		    object-fit: cover; 
+		}
+	</style>
 
 	<br>
 	<br>

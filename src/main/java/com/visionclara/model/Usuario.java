@@ -44,4 +44,78 @@ public class Usuario {
 	@OneToMany(mappedBy = "compraUsuario")
 	private List<Compra> listaCompra;
 
+	public Integer getCodUsu() {
+		return codUsu;
+	}
+
+	public void setCodUsu(Integer codUsu) {
+		this.codUsu = codUsu;
+	}
+
+	public String getNomUsu() {
+		return nomUsu;
+	}
+
+	public void setNomUsu(String nomUsu) {
+		this.nomUsu = nomUsu;
+	}
+
+	public String getApeUsu() {
+		return apeUsu;
+	}
+
+	public void setApeUsu(String apeUsu) {
+		this.apeUsu = apeUsu;
+	}
+
+	public int getDniUsu() {
+		return dniUsu;
+	}
+
+	public void setDniUsu(int dniUsu) {
+		this.dniUsu = dniUsu;
+	}
+
+	public String getEmaUsu() {
+		return emaUsu;
+	}
+
+	public void setEmaUsu(String emaUsu) {
+		this.emaUsu = emaUsu;
+	}
+
+	public int getTelUsu() {
+		return telUsu;
+	}
+
+	public void setTelUsu(int telUsu) {
+		this.telUsu = telUsu;
+	}
+
+	public String getDirUsu() {
+		return dirUsu;
+	}
+
+	public void setDirUsu(String dirUsu) {
+		this.dirUsu = dirUsu;
+	}
+
+	public Rol getUsuarioRol() {
+		return usuarioRol;
+	}
+
+	public void setUsuarioRol(Rol usuarioRol) {
+		this.usuarioRol = usuarioRol;
+	}
+
+	public List<Compra> getListaCompra() {
+		return listaCompra;
+	}
+
+	public void setListaCompra(List<Compra> listaCompra) {
+		this.listaCompra = listaCompra;
+	}
+	
+	
+
 }

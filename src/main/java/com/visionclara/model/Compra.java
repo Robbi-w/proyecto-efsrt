@@ -52,4 +52,52 @@ public class Compra {
 		this.listaCDetalle = listaCDetalle;
 	}
 
+	public Integer getCodCom() {
+		return codCom;
+	}
+
+	public void setCodCom(Integer codCom) {
+		this.codCom = codCom;
+	}
+
+	public Date getFecCom() {
+		return fecCom;
+	}
+
+	public void setFecCom(Date fecCom) {
+		this.fecCom = fecCom;
+	}
+
+	public BigDecimal getMontoCom() {
+		return montoCom;
+	}
+
+	public void setMontoCom(BigDecimal montoCom) {
+		this.montoCom = montoCom;
+	}
+
+	public String getMpago() {
+		return mpago;
+	}
+
+	public void setMpago(String mpago) {
+		this.mpago = mpago;
+	}
+
+	public Usuario getCompraUsuario() {
+		return compraUsuario;
+	}
+
+	public void setCompraUsuario(Usuario compraUsuario) {
+		this.compraUsuario = compraUsuario;
+	}
+
+	public Administrador getCompraAdministrador() {
+		return compraAdministrador;
+	}
+
+	public void setCompraAdministrador(Administrador compraAdministrador) {
+		this.compraAdministrador = compraAdministrador;
+	}
+	
 }

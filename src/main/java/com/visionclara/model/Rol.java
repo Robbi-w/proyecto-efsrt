@@ -49,4 +49,20 @@ public class Rol {
 		this.listaAdministradores = listaAdministradores;
 	}
 
+	public Integer getCodRol() {
+		return codRol;
+	}
+
+	public void setCodRol(Integer codRol) {
+		this.codRol = codRol;
+	}
+
+	public String getNomRol() {
+		return nomRol;
+	}
+
+	public void setNomRol(String nomRol) {
+		this.nomRol = nomRol;
+	}
+	
 }

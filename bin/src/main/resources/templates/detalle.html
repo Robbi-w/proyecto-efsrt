@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <title>Detalle de Producto</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/resources/img/RoyalPawsLogo-nobg.png" type="image/x-icon">
+    
+    <!-- Cargar CSS -->
+    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<!-- Fin Cargar CSS -->
+</head>
+
+<body class="my-body">
+	
+	<!-- LLamado de Header -->
+	<div th:replace="~{/fragments/header :: myheader}"></div>
+
+	 <!-- Inicio Detalle -->
+	 <div class="py-5">
+	     <div class="container px-4 px-lg-5 my-5 text-light">
+     		<h3><i class="bi bi-box-seam"></i> Detalle Producto</h3>
+			<hr>
+			<!-- Detalles -->
+	         <div class="row gx-4 gx-lg-5 align-items-center" th:each="pd:${productoDetalle}">
+				<!-- Columna 1 -->
+	             <div class="col-md-3">
+	                 <!-- Image Producto -->
+	                 <img class="card-img-top mb-5 mb-md-0" th:src="@{/datosImg/{royalpaws}(royalpaws=${pd.nomArchivo})}" alt="portada" />        
+	             </div>
+	             <!-- Columna 2 -->
+	             <div class="col-md-9">
+	                 <div class="d-flex align-items-center justify-content-end">    
+	                       <a class="btn btn-danger btn-sm"><i class="bi bi-heart-fill"></i> Añadir a Wishlist</a>
+	                 </div>
+	                 <!-- Nombre -->
+	                 <h1 class="display-5 fw-bolder pb-2" th:text="${pd.nomProd}"></h1>
+	                 <div class="row d-flex">
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Marca</span>
+	                         <p th:text="${pd.productoMarca.nomMarca}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Categoria</span>
+	                         <p th:text="${pd.catProd}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Stock</span>
+	                         <p th:text="${pd.stockProd}"></p>
+	                     </div>
+	                     <div class="col-lg-3 col-md-6">
+	                         <span class="fw-bold small">Precio</span>
+	                         <p>S/ <span th:text="${pd.precioCompra}"></span></p>
+	                     </div>
+	                 </div>
+	                 <div>
+	                     <span class="fw-bold small">Descripción</span>
+	                     <p class="" style="text-align: justify;" th:text="${pd.desProd}"></p>
+	                 </div>
+	                 <!-- Opciones -->
+	                 <div class="d-flex justify-content-end">
+	                     <!-- Contador -->
+	                     <div class="btn-group me-4" role="group" aria-label="Basic example">
+						    <button type="button" class="btn btn-sm btn-success border-secondary px-2" onclick="decreaseCount()">
+						        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+						            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+						        </svg>
+						    </button>
+						    <button type="button" class="btn btn-sm btn-light border-secondary px-3" id="contador">1</button>
+						    <button type="button" class="btn btn-sm btn-success text-light border-secondary px-2" onclick="increaseCount()">
+						        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+						            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+						        </svg>
+						    </button>
+						</div>
+	                     <!-- Boton Carrito -->
+	                     <a th:href="@{/compra/boleta}" id="boton-agregar" class="btn px-3" type="button">Agregar al<i class="bi bi-cart-plus-fill mx-1"></i></a>
+	                     <a id="boton-regresar" class="btn px-3 ms-3" type="button" th:href="@{/index}"><i class="bi bi-box-arrow-in-right"></i> Regresar a la Tienda</a>
+	                 </div>
+	             </div>
+	         </div>
+	     </div>
+	 </div>
+	 <!-- Fin Detalle -->
+   
+	<br>
+	<br>
+	<!-- Llamado footer -->
+	<div th:replace="~{/fragments/footer :: myfooter}"></div>
+	
+	<!-- Cargar JS -->
+	<script src="/resources/js/jquery-3.6.0.js"></script>
+    <script src="/resources/js/plugins.js"></script>
+    <script src="/resources/js/back-top.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- Fin de Cargar JS -->
+    
+    <!-- Funcionamiento de botones contador -->
+    <script>
+    	// Iniciar
+	    var count = 1;
+    	// Incrementar el contador
+	    function increaseCount() { count++; updateCount(); }
+	 	// Disminuir el contador
+	    function decreaseCount() { if (count > 1) { count--; updateCount(); }}
+	 	// Actualizar el texto
+	    function updateCount() { var countButton = document.getElementById('contador'); countButton.innerHTML = count; }
+	</script>
+
+</body>
+
+</html>

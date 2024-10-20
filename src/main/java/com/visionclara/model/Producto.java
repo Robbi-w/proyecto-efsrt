@@ -68,4 +68,77 @@ public class Producto {
 	public void setNomArchivo(String nomArchivo) {
 		this.nomArchivo = nomArchivo;
 	}
+
+	public Integer getCodProd() {
+		return codProd;
+	}
+
+	public void setCodProd(Integer codProd) {
+		this.codProd = codProd;
+	}
+
+	public String getNomProd() {
+		return nomProd;
+	}
+
+	public void setNomProd(String nomProd) {
+		this.nomProd = nomProd;
+	}
+
+	public String getDesProd() {
+		return desProd;
+	}
+
+	public void setDesProd(String desProd) {
+		this.desProd = desProd;
+	}
+
+	public String getCatProd() {
+		return catProd;
+	}
+
+	public void setCatProd(String catProd) {
+		this.catProd = catProd;
+	}
+
+	public int getStockProd() {
+		return stockProd;
+	}
+
+	public void setStockProd(int stockProd) {
+		this.stockProd = stockProd;
+	}
+
+	public BigDecimal getPrecioCompra() {
+		return precioCompra;
+	}
+
+	public void setPrecioCompra(BigDecimal precioCompra) {
+		this.precioCompra = precioCompra;
+	}
+
+	public byte[] getImg_prod() {
+		return img_prod;
+	}
+
+	public void setImg_prod(byte[] img_prod) {
+		this.img_prod = img_prod;
+	}
+
+	public Marca getProductoMarca() {
+		return productoMarca;
+	}
+
+	public void setProductoMarca(Marca productoMarca) {
+		this.productoMarca = productoMarca;
+	}
+
+	public Proveedor getProductoProveedor() {
+		return productoProveedor;
+	}
+
+	public void setProductoProveedor(Proveedor productoProveedor) {
+		this.productoProveedor = productoProveedor;
+	}
+	
 }

@@ -39,4 +39,38 @@ public class CompraDetalle {
 		CDetalleCompra = cDetalleCompra;
 	}
 
+	public Integer getCodDetCom() {
+		return codDetCom;
+	}
+
+	public void setCodDetCom(Integer codDetCom) {
+		this.codDetCom = codDetCom;
+	}
+
+	public BigDecimal getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(BigDecimal precio) {
+		this.precio = precio;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public Producto getCDetalleProducto() {
+		return CDetalleProducto;
+	}
+
+	public void setCDetalleProducto(Producto cDetalleProducto) {
+		CDetalleProducto = cDetalleProducto;
+	}
+	
+	
+
 }

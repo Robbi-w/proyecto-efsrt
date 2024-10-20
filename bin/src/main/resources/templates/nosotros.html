@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sobre Nosotros</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/resources/img/RoyalPawsLogo-nobg.png" type="image/x-icon">
+
+	<!-- Cargar CSS -->
+	<link rel="stylesheet" href="/resources/css/index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+
+<body class="my-body">
+
+	<!-- Llamado Header -->
+	<div th:replace="~{/fragments/header :: myheader}"></div>
+	<br>
+	<br>
+	<br>
+
+	<!--Nosotros-->
+	<div class="container py-4 ">
+		<h3 class="text-center text-light">Sobre Nosotros</h3>
+		<div class="py-3 text-center d-flex">
+			<div class="container-nosotros mx-5">
+				<p id="nosotros" class="text-light">
+					Acerca de la familia de Royal Paws
+
+					Aquí, los miembros de nuestro equipo aman a sus mascotas tanto como usted.
+
+					Sabemos que son más que simples mascotas, son parte de la familia. Es por eso que Royal Paws 
+					trabajan con la promesa de cuidarlos como si fueran nuestros.
+
+					Creemos que la salud y el bienestar no se trata de una sola cosa, sino de todo lo que usted hace
+					para cuidar a su mascota, tanto física como mentalmente.
+				</p>	
+				<p id="nosotros" class="text-light">
+					Cuando se trata de comida para mascotas, siempre daremos el consejo correcto. Nuestro amigable
+					equipo ha perfeccionado la ciencia de la hora de comer, con más de 210,000 horas de capacitación en
+					nutrición, ¡lo que nos convierte en verdaderos amantes de la comida! Por lo tanto, siempre
+					recomendaremos una dieta completa y equilibrada que obtenga la aprobación del veterinario y la
+					aprobación de su mascota.
+
+					Criar una mascota también implica cuidar su salud y seguridad con rutinas, productos y servicios de
+					cuidado preventivo. Siempre estamos a su lado para ayudarlo.
+				</p>
+				<p id="nosotros" class="text-light">
+					¡Creemos que cuanto más jugamos, mejor nos vinculamos! Por eso tenemos los mejores juguetes para la
+					ajetreada vida de tu mascota, diseñados para mantenerla estimulada y físicamente activa.
+
+					¡Mientras corren, saltan, arañan, nadan y mastican! Sabemos, más que nadie, que un poco de
+					entrenamiento contribuye en gran medida a que las mascotas y sus padres sean más felices de por
+					vida.
+
+					Y al final del día, crear un ambiente cómodo y seguro es uno de los trabajos más importantes que
+					tiene un padre de mascota. Así que tenga la seguridad de que les brindamos toda la comodidad que
+					necesitan, tanto dentro como fuera de casa, para relajarse y acurrucarse.
+				</p>
+			    <p id="nosotros" class="text-light">
+					Entonces, para todos los padres de mascotas, aquí tiene todo lo que necesitarán para mantener a su 
+					mascota sana y feliz de por vida.
+				</p>
+				<p id="nosotros" class="text-light">
+					¡Todo a un solo click de distancia!
+				</p>
+			</div>
+			<div>
+				<img class="img-nosotros" src="/resources/img/nosotros.jpg" alt="nosotros">
+			</div>
+		</div>
+
+	</div>
+
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<!-- Llamado footer -->
+	<div th:replace="~{/fragments/footer :: myfooter}"></div>
+
+	<!-- Inicio Cargar JS -->
+	<script src="/resources/js/jquery-3.6.0.js"></script>
+	<script src="/resources/js/plugins.js"></script>
+	<script src="/resources/js/back-top.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
