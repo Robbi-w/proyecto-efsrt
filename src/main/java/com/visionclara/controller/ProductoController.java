@@ -155,7 +155,7 @@ public class ProductoController {
 			//String ruta="C:\\Users\\User\\Desktop\\ImagenesDAWI\\datosImg";
 			
 			// Ruta de USB
-			String ruta="E:\\Cibertec New\\5to Ciclo\\Desarrollo de Aplicaciones Web\\ImagenesDAWI\\datosImg";
+			String ruta="C:/ProyectoEFSRT/ImagenesDAWI/datosImg/";
 			
 			// Generar archivo
 			Files.write(Paths.get(ruta + nomArchivoString), bytes);

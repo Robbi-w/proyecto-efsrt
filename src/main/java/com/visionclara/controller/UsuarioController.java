@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,6 +35,17 @@ public class UsuarioController {
 	@Autowired
 	private RolService serviRol;
 	
+	
+	@GetMapping("/redirect")
+	public String redirectSegunRol(Authentication authentication) {
+		
+        if (authentication.getAuthorities().stream()
+                .anyMatch(role -> role.getAuthority().equals("ROLE_ADMIN"))) {
+            return "redirect:/menu"; 
+        } else {
+            return "redirect:/index"; 
+        }
+    }
 	
 	// Login
 	@RequestMapping("/login")
